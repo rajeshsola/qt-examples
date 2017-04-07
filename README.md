@@ -8,5 +8,5 @@ Qt examples on Wired/Wireless Connectivity,Sensor Interfacing etc.
 
 3.MQTT Client - Publish, Subscribe operations using qmqtt library
 
-3.SenseHAT Demo using RTIMULib running on Raspberry Pi and retrieving data thru MQTT on a remote machine
+4.SenseHAT Demo using RTIMULib running on Raspberry Pi and retrieving data thru MQTT on a remote machine
 
