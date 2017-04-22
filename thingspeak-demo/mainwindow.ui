@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1037</width>
+    <height>799</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ThingSpeak Demo</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="twMain">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>651</width>
+      <height>661</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Publish</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>41</x>
+        <y>40</y>
+        <width>501</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Temperature(Field1)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QSpinBox" name="sbField1">
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>25</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QSlider" name="horizontalSlider">
+         <property name="value">
+          <number>25</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Humidity(Field2)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QSpinBox" name="sbField2">
+         <property name="maximum">
+          <number>100</number>
+         </property>
+         <property name="value">
+          <number>72</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QScrollBar" name="horizontalScrollBar">
+         <property name="value">
+          <number>72</number>
+         </property>
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Pressure(Field3)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QSpinBox" name="sbField3">
+         <property name="minimum">
+          <number>260</number>
+         </property>
+         <property name="maximum">
+          <number>1260</number>
+         </property>
+         <property name="value">
+          <number>900</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QDial" name="dial">
+         <property name="minimum">
+          <number>260</number>
+         </property>
+         <property name="maximum">
+          <number>1260</number>
+         </property>
+         <property name="value">
+          <number>900</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pbPublish">
+         <property name="text">
+          <string>GET</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="pbPublishPost">
+         <property name="text">
+          <string>POST</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Retrieve</string>
+     </attribute>
+     <widget class="QPushButton" name="pbClear">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>20</y>
+        <width>80</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Clear</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>491</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QComboBox" name="cbFields">
+         <item>
+          <property name="text">
+           <string>All Fields</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Field1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Field2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Field3</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pbRetrieve">
+         <property name="text">
+          <string>Retrieve</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_8">
+         <property name="text">
+          <string>Last</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QSpinBox" name="sbResults">
+         <property name="value">
+          <number>10</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_9">
+         <property name="text">
+          <string>Results</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTableWidget" name="tableFeeds">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>591</width>
+        <height>421</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>Entry Id</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Field1</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Field2</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Field3</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Timestamp</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Channels</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>9</x>
+        <y>11</y>
+        <width>411</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0" colspan="2">
+        <widget class="QCheckBox" name="cbChNewEnabled">
+         <property name="text">
+          <string>Create a new channel</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="leChNewName"/>
+       </item>
+       <item row="2" column="1">
+        <widget class="QTextEdit" name="teChNewDescription"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="cbChNewDescription">
+         <property name="text">
+          <string>Description</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="cbChNewName">
+         <property name="text">
+          <string>Name</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>420</y>
+        <width>421</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="cbChNewMetadata">
+         <property name="text">
+          <string>Meta Data</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QTextEdit" name="leChNewMetadata"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="cbChNewTags">
+         <property name="text">
+          <string>Tags</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="leChNewTags"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="checkBox_15">
+         <property name="text">
+          <string>Url</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="leChNewUrl"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>170</y>
+        <width>417</width>
+        <height>220</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_6">
+       <item row="0" column="0">
+        <widget class="QCheckBox" name="cbChNewField1">
+         <property name="text">
+          <string>Field1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="leChNewField1"/>
+       </item>
+       <item row="0" column="2">
+        <widget class="QCheckBox" name="cbChNewField5">
+         <property name="text">
+          <string>Field5</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLineEdit" name="leChNewField5"/>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="cbChNewField2">
+         <property name="text">
+          <string>Field2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="leChNewField2"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QCheckBox" name="cbChNewField6">
+         <property name="text">
+          <string>Field6</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QLineEdit" name="leChNewField6"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="cbChNewField3">
+         <property name="text">
+          <string>Field3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="leChNewField3"/>
+       </item>
+       <item row="2" column="2">
+        <widget class="QCheckBox" name="cbChNewField7">
+         <property name="text">
+          <string>Field7</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <widget class="QLineEdit" name="leChNewField7"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="cbChNewField4">
+         <property name="text">
+          <string>Field4</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="leChNewField4"/>
+       </item>
+       <item row="3" column="2">
+        <widget class="QCheckBox" name="cbChNewField8">
+         <property name="text">
+          <string>Field8</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="3">
+        <widget class="QLineEdit" name="leChNewField8"/>
+       </item>
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="cbChNewElevation">
+         <property name="text">
+          <string>Elevation</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="leChNewElevation"/>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="cbChNewLongitude">
+         <property name="text">
+          <string>Longitude</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QLineEdit" name="leChNewLongitude"/>
+       </item>
+       <item row="7" column="0" colspan="2">
+        <widget class="QCheckBox" name="cbChNewPublic">
+         <property name="text">
+          <string>Make this Channel Public</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2" colspan="2">
+        <widget class="QPushButton" name="pbChNewCreate">
+         <property name="text">
+          <string>Create</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QLineEdit" name="leChNewLattitude"/>
+       </item>
+       <item row="5" column="2">
+        <widget class="QCheckBox" name="cbChNewLattitude">
+         <property name="text">
+          <string>Lattitude</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>Settings</string>
+     </attribute>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>30</y>
+      <width>281</width>
+      <height>291</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>264</width>
+       <height>72</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Select Channel</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="2">
+       <widget class="QComboBox" name="cbListChannels"/>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pbListChanels">
+        <property name="text">
+         <string>Refresh</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QPushButton" name="pbChannelView">
+        <property name="text">
+         <string>View</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="pbChannelClear">
+        <property name="text">
+         <string>Clear</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="pbChannelDelete">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>261</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="text">
+         <string>Channel Key</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="leChKey">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>O0QZ1X48D1QOZJ37</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>130</y>
+       <width>261</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="leChannelId">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>228318</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="lblWRKey">
+        <property name="text">
+         <string>WR Key</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLineEdit" name="leWRKey">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>Y8N6GAGXMF7AXJKW</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="lblRDKey">
+        <property name="text">
+         <string>RD Key</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QPushButton" name="pbSettingsLock">
+        <property name="text">
+         <string>Unlock</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLineEdit" name="leRDKey">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="text">
+         <string>VA6F49CUNNQ9TI5W</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="lblChannel">
+        <property name="text">
+         <string>Channel</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1037</width>
+     <height>19</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>sbField1</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSlider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>240</x>
+     <y>118</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>348</x>
+     <y>117</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSlider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sbField1</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>389</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>238</x>
+     <y>120</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>dial</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sbField3</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>333</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>236</x>
+     <y>221</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalScrollBar</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>sbField2</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>144</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sbField3</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>dial</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>241</x>
+     <y>216</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>339</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sbField2</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalScrollBar</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>275</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pbClear</sender>
+   <signal>clicked()</signal>
+   <receiver>tableFeeds</receiver>
+   <slot>clearContents()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>558</x>
+     <y>90</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>558</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
